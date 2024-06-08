@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title> Currency Converter By Raj </title>
+	<style>
+		*{font-size:40px; font-family: Cambria;}
+		body{background-color:lightblue;}
+	</style>
+</head>
+
+<body>
+<center>
+	<h1> Currency Converter </h1>
+	<form>
+		<label for="dollars">$</label>
+		<input type="number" step="any" placeholder="Enter Amount in $" id="dollars" />
+		<br><br>
+		<label for="rupees">&#8377</label>
+		<input type="number" step="any" placeholder="Enter Amount in &#8377" id="rupees" />
+
+	</form>
+
+	<script>
+		let dollars = document.getElementById("dollars")
+		let rupees = document.getElementById("rupees")
+
+		dollars.addEventListener("input",function(){
+			let d = parseFloat(dollars.value);
+			let r = d * 84;
+			rupees.value = r.toFixed(2)
+		});
+
+		rupees.addEventListener("input",function(){
+			let r = parseFloat(rupees.value)
+			let d = r/84;
+			dollars.value = d.toFixed(2)
+		});
+	
+
+	</script>
+</body>
+</center>
+</html>
